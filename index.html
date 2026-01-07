@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
   <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -14,97 +19,115 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* IMPORTANT FIX */
+      padding: 16px;
     }
+
     main {
       background-color: white;
       border-radius: 10px;
       overflow: hidden;
       max-width: 600px;
+      width: 100%;
       display: flex;
       flex-direction: column;
     }
+
     .image img {
       width: 100%;
+      height: 100%;
       display: block;
+      object-fit: cover;
     }
+
     .content {
       padding: 24px;
     }
+
     .category {
       letter-spacing: 4px;
-      color: hsl(228, 12%, 48%);
       font-size: 12px;
+      color: hsl(228, 12%, 48%);
       margin-bottom: 12px;
     }
+
     h1 {
       font-family: 'Fraunces', serif;
       font-size: 32px;
       margin: 0 0 16px;
       color: hsl(212, 21%, 14%);
     }
+
     .description {
       font-size: 14px;
-      color: hsl(228, 12%, 48%);
       line-height: 1.6;
+      color: hsl(228, 12%, 48%);
       margin-bottom: 24px;
     }
+
     .price {
       display: flex;
       align-items: center;
       gap: 16px;
       margin-bottom: 20px;
     }
+
     .current {
       font-family: 'Fraunces', serif;
       font-size: 32px;
       color: hsl(158, 36%, 37%);
     }
+
     .old {
       text-decoration: line-through;
-      color: hsl(228, 12%, 48%);
       font-size: 14px;
+      color: hsl(228, 12%, 48%);
     }
+
     button {
       width: 100%;
-      background-color: hsl(158, 36%, 37%);
       border: none;
-      color: white;
-      padding: 14px;
       border-radius: 8px;
-      font-size: 14px;
+      padding: 14px;
+      background-color: hsl(158, 36%, 37%);
+      color: white;
       font-weight: 700;
+      font-size: 14px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: hsl(158, 36%, 25%);
     }
+
     button img {
       margin-right: 10px;
       vertical-align: middle;
     }
+
+    /* Desktop layout */
     @media (min-width: 768px) {
+      body {
+        align-items: center;
+      }
+
       main {
         flex-direction: row;
       }
+
       .image {
         width: 50%;
       }
+
       .content {
         width: 50%;
       }
     }
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-      margin-top: 10px;
-    }
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
   </style>
 </head>
+
 <body>
+
   <main>
     <div class="image">
       <picture>
@@ -112,22 +135,28 @@
         <img src="./images/image-product-desktop.jpg" alt="Gabrielle Essence Eau De Parfum">
       </picture>
     </div>
+
     <div class="content">
       <p class="category">PERFUME</p>
+
       <h1>Gabrielle Essence Eau De Parfum</h1>
+
       <p class="description">
         A floral, solar and voluptuous interpretation composed by Olivier Polge,
         Perfumer-Creator for the House of CHANEL.
       </p>
+
       <div class="price">
         <span class="current">$149.99</span>
         <span class="old">$169.99</span>
       </div>
+
       <button>
         <img src="./images/icon-cart.svg" alt="">
         Add to Cart
       </button>
     </div>
   </main>
+
 </body>
 </html>
